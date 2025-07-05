@@ -1,0 +1,264 @@
+
+openapi: 3.0.0
+info:
+  title: API Ecommerce Catalogo
+  version: 1.0.0
+  description: Documentación de la API RESTful para una plataforma de ecommerce (usuarios y admins)
+servers:
+  - url: http://localhost/api
+
+paths:
+  /register:
+    post:
+      summary: Registro de usuario
+      tags: [Autenticación]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '201':
+          description: Usuario registrado
+  /login:
+    post:
+      summary: Login de usuario
+      tags: [Autenticación]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Login exitoso
+  /logout:
+    post:
+      summary: Cierre de sesión
+      tags: [Autenticación]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Logout exitoso
+  /profile:
+    get:
+      summary: Perfil del usuario autenticado
+      tags: [Autenticación]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Información del perfil
+  /productos:
+    get:
+      summary: Listar todos los productos
+      tags: [Productos]
+      responses:
+        '200':
+          description: Lista de productos
+  /productos/{id}:
+    get:
+      summary: Ver detalle de un producto
+      tags: [Productos]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Detalle del producto
+  /categorias:
+    get:
+      summary: Listar categorías
+      tags: [Productos]
+      responses:
+        '200':
+          description: Lista de categorías
+  /categorias/{id}/productos:
+    get:
+      summary: Productos por categoría
+      tags: [Productos]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Lista de productos por categoría
+  /carrito:
+    get:
+      summary: Ver contenido del carrito
+      tags: [Carrito]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Contenido del carrito
+  /carrito/agregar:
+    post:
+      summary: Agregar producto al carrito
+      tags: [Carrito]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Producto agregado
+  /carrito/actualizar:
+    put:
+      summary: Actualizar cantidad de un producto
+      tags: [Carrito]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Cantidad actualizada
+  /carrito/eliminar:
+    delete:
+      summary: Eliminar un producto del carrito
+      tags: [Carrito]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Producto eliminado
+  /carrito/vaciar:
+    delete:
+      summary: Vaciar todo el carrito
+      tags: [Carrito]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Carrito vaciado
+  /pedidos:
+    post:
+      summary: Crear un nuevo pedido
+      tags: [Pedidos]
+      security:
+        - bearerAuth: []
+      responses:
+        '201':
+          description: Pedido creado
+    get:
+      summary: Listar pedidos del usuario
+      tags: [Pedidos]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Lista de pedidos
+  /pedidos/{id}:
+    get:
+      summary: Ver detalle de un pedido
+      tags: [Pedidos]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Detalle del pedido
+  /admin/productos:
+    get:
+      summary: Listar todos los productos (admin)
+      tags: [Admin - Productos]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Lista de productos
+    post:
+      summary: Crear nuevo producto
+      tags: [Admin - Productos]
+      security:
+        - bearerAuth: []
+      responses:
+        '201':
+          description: Producto creado
+  /admin/productos/{id}:
+    put:
+      summary: Actualizar producto
+      tags: [Admin - Productos]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Producto actualizado
+    delete:
+      summary: Eliminar producto
+      tags: [Admin - Productos]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Producto eliminado
+  /admin/categorias:
+    get:
+      summary: Listar todas las categorías (admin)
+      tags: [Admin - Categorías]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Lista de categorías
+    post:
+      summary: Crear nueva categoría
+      tags: [Admin - Categorías]
+      security:
+        - bearerAuth: []
+      responses:
+        '201':
+          description: Categoría creada
+
+  /admin/pedidos:
+    get:
+      summary: Ver todos los pedidos
+      tags: [Admin - Pedidos]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Lista de pedidos
+
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

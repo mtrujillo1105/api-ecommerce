@@ -1,0 +1,608 @@
+{
+	"info": {
+		"_postman_id": "6f9dfa8d-0910-4ca9-ae27-221d2f9a892d",
+		"name": "SOLVEN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "448187"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"admin@admin.com\",\n\t\"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"admin\",\n\t\"email\": \"admin@admin.com\",\n\t\"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTY4ODQxMzI5MiwiZXhwIjoxNjg4NDE2ODkyLCJuYmYiOjE2ODg0MTMyOTIsImp0aSI6IlVuaUNaSmFCb0dKUmoycE0iLCJzdWIiOiI5NjY5OCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.4NW6bHdN01z9pWOIXPWajCRzbi3UEul-2hpNWN5JNXw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"codigo\": \"SW\",\n\t\"nombre\": \"Jose Atachagua\",\n\t\"nombreCorto\": \"jose\",\n\t\"ruc\": \"10206036881\",\n\t\"codIafa\": \"w\",\n\t\"estado\": \"1\",\n\t\"idSis\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cliente/idSis",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTY4ODQxMzI5MiwiZXhwIjoxNjg4NDE2ODkyLCJuYmYiOjE2ODg0MTMyOTIsImp0aSI6IlVuaUNaSmFCb0dKUmoycE0iLCJzdWIiOiI5NjY5OCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.4NW6bHdN01z9pWOIXPWajCRzbi3UEul-2hpNWN5JNXw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"codigo\": \"SW\",\n    \"nombre\": \"Jose Atachagua\",\n\t\"nombreCorto\": \"jose\",\n\t\"ruc\": \"10206036881\",\n\t\"codIafa\": \"w\",\n\t\"estado\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/client/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"client",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "persona - afiliado",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTY4ODUzODE5NywiZXhwIjoxNjg4NTQxNzk3LCJuYmYiOjE2ODg1MzgxOTcsImp0aSI6IkpwTld1QWlKSExMUmdJVXgiLCJzdWIiOiI5NjY5NiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.qJH48D3j3g_QIV7OTcmA0qQgjxbJgJA-29qTvld7k_c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"apePaterno\": \"pr\",\n\t\"apeMaterno\": \"\",\n\t\"nombre\": \"\",\n\t\"razonSocial\": \"\",\n\t\"FK\":\"FK\",\n\t\"tipoPersonaId\": \"2\",\n\t\"tipoDocumentoId\": \"1\",\n\t\"estadoCivilId\": \"2\",\n\t\"codigoDepartamento\": \"01\",\n\t\"codigoProvincia\": \"0101\",\n\t\"codigoDistrito\": \"010101\",\n\t\"nacionalidadId\": \"1\",\n\t\n\t\"codigoCliente\": \"1\",\n\t\"codigoCategoria\": \"01\",\n\t\"planId\": \"1\",\n\t\"motivoBajaId\": \"1\",\n\t\n\t\"FK_END\":\"FK_END\",\n\t\n\t\"nroDocumento\": \"46972540\",\n\t\"fechaNacimiento\": \"2023-06-16\",\n\t\"sexo\": \"1\",\n\t\"direccion\":\"\",\n\t\"email\":\"\",\n\t\"telefono\":\"\",\n\t\"foto\":\"\",\n\t\"peso\":\"\",\n\t\"estatura\":\"\",\n\t\"discapacitado\":\"\",\n\t\"consumeAlcohol\":\"\",\n\t\"consumeDrogas\":\"\",\n\t\"grupoSanguineo\":\"\",\n\t\"codTitula\":\"1\",\n\t\"centroCosto\":\"1\",\n\t\"fechaAlta\":\"2023-06-19\",\n\t\"fechaBaja\":\"\",\n\t\"fechaFinCarencia\":\"\",\n\t\"fechaContinuidad\":\"\",\n\t\"financia\":\"S\",\n\t\"contrato\":\"CESAR_CASANOVA_02\",\n\t\"codAfiliado\":\"1\",\n\t\"estado\":\"1\",\n\t\"programaAtencionDental\":\"S\",\n\t\"programaEspecial\":\"S\",\n\t\"fechaInicioProgramaEspecial\":\"2023-06-19\",\n\t\"parentescoPetro\":\"1\",\n\t\"basico\":\"S\",\n\t\"onco\":\"C\",\n\t\"segundaCapa\":\"S\",\n\t\"fallecido\":\"1\",\n\t\"contratante\":\"1\",\n\t\"dependencia\":\"d\",\n\t\"rol\":\"r\",\n\t\"idHijo\":\"r\",\n\t\"documento\":\"r\",\n\t\"afiliado\":\"r\"\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/person-and-affiliate-details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"person-and-affiliate-details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "aviso - afiliado",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTY4ODU0MzgzNiwiZXhwIjoxNjg4NTQ3NDM2LCJuYmYiOjE2ODg1NDM4MzYsImp0aSI6Ill3QnN1cERzaURTS2FXblQiLCJzdWIiOiI5NjY5NiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.xeIcinJw_cWnMDGvzftDhzecv2iKMGFJTVmbZC16CIU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"codigoAfiliado\": \"1100000200\",\n    \"descripcion\": \"test\",\n    \"clasificacionId\": \"1\",\n    \"fechaDesde\": \"2022-10-23\",\n    \"fechaHasta\": \"2023-10-23\",\n    \"sinLimite\": false,\n    \"estado\": true,\n    \"idSis\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/affiliate-notification",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"affiliate-notification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "aviso - afiliado/idSis",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTY4ODU0MzgzNiwiZXhwIjoxNjg4NTQ3NDM2LCJuYmYiOjE2ODg1NDM4MzYsImp0aSI6Ill3QnN1cERzaURTS2FXblQiLCJzdWIiOiI5NjY5NiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.xeIcinJw_cWnMDGvzftDhzecv2iKMGFJTVmbZC16CIU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"codigoAfiliado\": \"1100000100\",\n    \"descripcion\": \"asasasas\",\n    \"clasificacionId\": \"1\",\n    \"fechaDesde\": \"2022-10-23\",\n    \"fechaHasta\": \"2023-10-23\",\n    \"sinLimite\": false,\n    \"estado\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/affiliate-notification/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"affiliate-notification",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "plan",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTY4ODUzNDM1MSwiZXhwIjoxNjg4NTM3OTUxLCJuYmYiOjE2ODg1MzQzNTEsImp0aSI6IkRFdklvMjNwWE5nUUFzSVQiLCJzdWIiOiI5NjY5NiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Dm7j4lmIocxkaffxnQpgQ-Cm3VjqCh-0M_maH9bFhvQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"clienteId\": 4,\n\t\"codigo\": \"w\",\n\t\"nombre\": \"nombre\",\n\t\"tipoBeneficio\": \"0\",\n\t\"beneficioMaximo\": \"0\",\n\t\"comentarioBenefMax\": \"\",\n\t\"estado\": \"1\",\n\t\"codigoPlanSs\": \"\",\n\t\"descripcionPlanSs\": \"\",\n\t\"codigoProductoSs\": \"\",\n\t\"descripcionProductoSs\": \"\",\n\t\"tipoPlanSs\": \"1\",\n    \"idSis\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/plan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"plan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "plan/id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTY4ODUzNDM1MSwiZXhwIjoxNjg4NTM3OTUxLCJuYmYiOjE2ODg1MzQzNTEsImp0aSI6IkRFdklvMjNwWE5nUUFzSVQiLCJzdWIiOiI5NjY5NiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Dm7j4lmIocxkaffxnQpgQ-Cm3VjqCh-0M_maH9bFhvQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"clienteId\": 4,\n\t\"codigo\": \"w\",\n\t\"nombre\": \"nombre\",\n\t\"tipoBeneficio\": \"0\",\n\t\"beneficioMaximo\": \"0\",\n\t\"comentarioBenefMax\": \"\",\n\t\"estado\": \"1\",\n\t\"codigoPlanSs\": \"\",\n\t\"descripcionPlanSs\": \"\",\n\t\"codigoProductoSs\": \"\",\n\t\"descripcionProductoSs\": \"hola\",\n\t\"tipoPlanSs\": \"2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/plan/200",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"plan",
+						"200"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "plandbf",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTY4ODUzNjI4NywiZXhwIjoxNjg4NTM5ODg3LCJuYmYiOjE2ODg1MzYyODcsImp0aSI6ImV0MTJqYkFLWG9WSnBFSEoiLCJzdWIiOiI5NjY5NiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.amms0vacF7Hfqz0osrVMD1woLX_hv7JtQ1qAxAsu7xE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"clienteId\": 4,\n    \"clinicaId\": \"1\",\n    \"planId\": \"1\",\n    \"coberturaId\": \"1\",\n    \"tipoded\": \"10\",\n    \"formapago\": \"C\",\n    \"deducible\": \"0.5\",\n    \"coaseguro\": \"10\",\n    \"limitecob\": \"14000.5\",\n    \"observa\": \"test\",\n    \"parentesco\": \"test\",\n    \"fini\": \"2023-03-24\",\n    \"ffin\": \"2023-12-24\",\n    \"edadMaxima\": \"45\",\n    \"aplicaLimitecob\": true,\n    \"idSis\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/plandbf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"plandbf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "plandbf/idSis",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTY4ODUzNjI4NywiZXhwIjoxNjg4NTM5ODg3LCJuYmYiOjE2ODg1MzYyODcsImp0aSI6ImV0MTJqYkFLWG9WSnBFSEoiLCJzdWIiOiI5NjY5NiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.amms0vacF7Hfqz0osrVMD1woLX_hv7JtQ1qAxAsu7xE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"clienteId\": 4,\n    \"clinicaId\": \"1\",\n    \"planId\": \"1\",\n    \"coberturaId\": \"1\",\n    \"tipoded\": \"10\",\n    \"formapago\": \"C\",\n    \"deducible\": \"0.5\",\n    \"coaseguro\": \"10\",\n    \"limitecob\": \"14000.5\",\n    \"observa\": \"test\",\n    \"parentesco\": \"test\",\n    \"fini\": \"2023-03-24\",\n    \"ffin\": \"2023-12-24\",\n    \"edadMaxima\": \"45\",\n    \"aplicaLimitecob\": true,\n    \"idSis\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/plandbf/12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"plandbf",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "notification",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTY4Nzg5NjU5NSwiZXhwIjoxNjg3OTAwMTk1LCJuYmYiOjE2ODc4OTY1OTUsImp0aSI6Im4yVm5aejdyUnR4eUZoWjYiLCJzdWIiOiI5NjY5OCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.R4A4mSqswJs9ccQH5hint9bE-ggl1P62xaB5lGG9lCY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"codigoCliente\": \"01\",\n    \"descripcion\": \"test\",\n    \"tipo\": 1,\n    \"fechaVencimiento\": \"2023-08-10\",\n    \"avisoSisId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/notification",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"notification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cobertura",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTY4ODUzMjU5MiwiZXhwIjoxNjg4NTM2MTkyLCJuYmYiOjE2ODg1MzI1OTIsImp0aSI6IllnWlh2aVFxRmpwbWp6aE0iLCJzdWIiOiI5NjY5NiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.W5kZA_rEWq10E8ZlVNuBCDpxZeiBopDf2UeJqCI8Cu8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"codigo\": \"test22\",\n    \"descripcion\": \"test\",\n    \"codigoante\": \"test\",\n    \"codigotipo\": \"test\",\n    \"codigosubt\": \"test\",\n    \"tipo\": \"test\",\n    \"descripcionsusalud\": \"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/coverage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"coverage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cobertura/id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTY4ODE1NTYzMywiZXhwIjoxNjg4MTU5MjMzLCJuYmYiOjE2ODgxNTU2MzMsImp0aSI6IjhaUkw4SkVFNWJ6M2FRQWgiLCJzdWIiOiI5NjY5OCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.doJPAd13l1f8n2z2RpkBxRh4Wce8lTyHMXiNreTi5bA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"codigo\": \"test\",\n    \"descripcion\": \"test\",\n    \"codigoante\": \"test\",\n    \"codigotipo\": \"test\",\n    \"codigosubt\": \"test\",\n    \"tipo\": \"test\",\n    \"descripcionsusalud\": \"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/coverage/153",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"coverage",
+						"153"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "preexistencia",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTY4NzU2MDY3NSwiZXhwIjoxNjg3NTY0Mjc1LCJuYmYiOjE2ODc1NjA2NzUsImp0aSI6IndzU1M5ekFZZGRveE5iekQiLCJzdWIiOiI5NjY5OCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.ayKd9E3jSDIcWA9nVTH8Xgq4ACV8pvFJKE9YFYDYweQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"afiliadoId\": \"1\",\n    \"cieId\": \"1\",\n    \"motivoExclusionId\": \"1\",\n    \"fechaInicioExclusion\": \"2023-12-24\",\n    \"descripcion\": \"test\",\n    \"idSis\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/preexistence",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"preexistence"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "clinica",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTY4ODUzMjAyNSwiZXhwIjoxNjg4NTM1NjI1LCJuYmYiOjE2ODg1MzIwMjUsImp0aSI6IjdObzdBOHRpUUxEelBkNVgiLCJzdWIiOiI5NjY5NiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.s3LmoKmNlMi1IjVuMzd6DWFNwtSZ9dJAp93cSDOGvrU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"usuarioId\": 1,\n    \"codigo\": \"test\",\n    \"redMedicaId\": 1,\n    \"codigoUbigeo\": \"010101\",\n    \"nombre\": \"test\",\n    \"ruc\": \"test\",\n    \"telefono\": \"test\",\n    \"email\": \"cesar@gmail.com\",\n    \"direccion\": \"test\",\n    \"tipo\": \"test\",\n    \"acceso\": \"1\",\n    \"entVinculada\": \"1\",\n    \"ipress\": \"test\",\n    \"renipress\": \"test\",\n    \"estado\": \"1\",\n    \"zona\": \"test\",\n    \"igv\": \"test\",\n    \"sede\": \"test\",\n    \"ubicacion\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/clinic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"clinic"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
